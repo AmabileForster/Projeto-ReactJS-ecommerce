@@ -24,9 +24,7 @@ const Login = () => {
         setVisibilityToggle(!visibilityToggle);
     }
 
-    return <Grid container spacing={2} style={{
-        height:'100vh'
-    }}>
+    return <Grid container spacing={2}>
                 <Grid className='leftSide' item sx={{
                     padding: '10px',
                     boxSizing: 'border-box',
@@ -39,6 +37,7 @@ const Login = () => {
                     }}>
                         <img src={sideImg} style={{
                         width: '100%',
+                        marginTop: '10px'
                         }} alt={'Logo'}/>
                     </Stack>
                 </Grid>
@@ -89,7 +88,8 @@ const Login = () => {
                             <Link style={{
                                 textAlign:'center',
                                 display: 'block',
-                                width: '100%'
+                                width: '100%',
+                                textDecoration: 'none'
                             }}to="/register">Criar uma conta</Link>
                         </Grid>
                     </Stack>

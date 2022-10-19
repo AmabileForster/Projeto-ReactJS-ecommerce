@@ -24,9 +24,7 @@ const Register = () => {
         setVisibilityToggle(!visibilityToggle);
     }
 
-    return <Grid container spacing={2} style={{
-        height:'100vh'
-    }}>
+    return <Grid container spacing={2}>
                 <Grid className='leftSide' item sx={{
                     padding: '10px',
                     boxSizing: 'border-box',
@@ -39,6 +37,7 @@ const Register = () => {
                     }}>
                         <img src={register} style={{
                         width: '100%',
+                        marginTop: '10px'
                         }} alt={'Logo'}/>
                     </Stack>
                 </Grid>
@@ -107,13 +106,15 @@ const Register = () => {
                                 marginBottom: '16px'
                             }} xs={12}>
                             <Button fullWidth variant="contained" style={{
-                               backgroundColor: '#f7b0b8'
+                               backgroundColor: '#f7b0b8',
+                               //fontFamily: ''
                             }} endIcon={<LoginIcon />}>Criar conta</Button>
                             </Grid>
                             <Link style={{
                                 textAlign:'center',
                                 display: 'block',
-                                width: '100%'
+                                width: '100%',
+                                textDecoration: 'none'
                             }}to="/login">Entrar</Link>
                         </Grid>
                     </Stack>

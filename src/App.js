@@ -1,11 +1,9 @@
 import './App.css';
 import { lazy, Suspense, useEffect } from 'react';
-import {
-BrowserRouter as Router,
-Routes,
-Route
-} from "react-router-dom";
-
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 
 const Cart = lazy(() => import('./pages/cart/cart'));
@@ -23,6 +21,23 @@ function App() {
 
   return (
     <Router>
+      <AppBar position={'static'} style={{backgroundColor: '#f7b0b8'}}>
+        <Toolbar style={{
+          justifyContent: 'space-between'
+        }} >
+          <Typography variant='h6' component='h2'>
+            <Link to="/" style={{ textDecoration:'none', color:'white' }}>Loja virtual</Link>
+          </Typography>
+          <div>
+            <IconButton>
+              <Link to="/cart"><ShoppingCartIcon style={{color: 'white'}} /></Link>
+            </IconButton>
+            <IconButton><Link to="/login">
+              <LogoutIcon style={{color: 'white'}} /></Link>
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
           <Suspense fallback={'Carregando...'}>
             <Routes>
               <Route exact path="/" element={<Catalog/>}/>
