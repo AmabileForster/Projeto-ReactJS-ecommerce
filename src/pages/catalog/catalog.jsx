@@ -13,34 +13,40 @@ const Catalog = () => {
                     position: 'relative',
                     paddingTop:'0 !important',
                     marginBottom: '32px'
-                    //boxShadow: '5px 5px 11px #f7b0b861'
+              //boxShadow: '5px 5px 11px #f7b0b861'
                 }}> 
-                    <span style={{
+            <span style={{
                         position: 'absolute',
-                        right: 0,
-                        top: 0,
+                right: 0,
+                top: 0,
                         color: 'white',
                         fontWeight: 'bold',
                         backgroundColor: '#f7b0b8',
                         boxSizing: 'border-box',
                         padding: '10px'
                     }}>10%</span>
-                    <img src={products[id].image} style={{ width:'100%'}} alt={''}/>
+                    <img src={products[id].images[0]} style={{ width:'100%'}} alt={''}/>
 
                     {
-                        products[id].categories.map(categoryId => {
-                            return <span>{categories[categoryId].name}</span>
-                        })
+                        products[id].categories.map(categoryId => {return <span>{categories[categoryId].name}</span>})
                     }
-                   
+
                     <Typography variant="h4" component="h4" style={{ marginTop:'16px', marginBottom:'8px' }}>{products[id].name}</Typography>
-                    <Typography variant="p" component="p" style={{ marginBottom:'16px' }}>{products[id].description.substring(0, 150)}...</Typography>
+                    {
+                      products[id].promo_price ? <Typography variant="p" component="p" style={{float: 'left', marginRight: '8px', fontSize: '20px'}}>{products[id].promo_price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Typography> : ""
+                    }
+                    <Typography variant="p" component="p" style={{
+                        fontSize: products[id].promo_price ? '16px' : '20px',
+                        color: products[id].promo_price ? '#a3a3a3' : '#333333',
+                        textDecoration: products[id].promo_price ? 'line-through' : 'none'
+                    }}>{products[id].price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Typography>
+                    <Typography variant="p" component="p" style={{ marginBottom:'16px', marginTop:'10px' }}>{products[id].description.substring(0, 150)}...</Typography>
                     <Link to={"../product/" + id} style={{ textDecoration:'none', color:'white' }}>
                         <Button fullWidth variant='contained' style={{backgroundColor: '#f7b0b8'}}>
-                        Ver produto
-                        </Button>
-                    </Link>
-                 </Grid> 
+                Ver produto
+              </Button>
+            </Link>
+          </Grid>
             })
         }
     </Grid>
