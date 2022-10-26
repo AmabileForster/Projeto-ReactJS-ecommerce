@@ -1,5 +1,5 @@
 function userIsLoggedIn(navigate){
-   if(true){
+   if(false){
     window.location.href = "/login"
     }
 }
