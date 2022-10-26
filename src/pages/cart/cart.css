@@ -1,0 +1,22 @@
+.stackQuantity input{
+    width: 30px;
+}
+
+.stackQuantity input::-webkit-outer-spin-button,
+.stackQuantity input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.stackQuantity input[type=number] {
+    -moz-appearance: textfield;
+}
+
+
+.cartProduct_image div{
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
