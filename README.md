@@ -1,3 +1,10 @@
+Projeto de Reactjs do bootcamp fullstack infnet.
+
+Neste projeto estou realizando o desenvolvimento de uma loja virtual sem a aplicação de Back-end.
+
+_________________________________________________________________________________________
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -2,28 +2,21 @@ import { Button, Grid, IconButton, List, ListItem, ListItemAvatar, TextField, Ty
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { productsCart } from "./products-cart";
+import { calculateTotal, calculatePromo } from "../../utils/calculate";
 import "./cart.css";
 import { Stack } from "@mui/system";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-    const totals = [
-        [299.99, 199.90],
-        [542.90, null],
-        [299.99, 199.99],
-        [299.99, null]
-    ];
-    const subtotal = totals.reduce((pValue, cValue) => {
-        return cValue[0] + pValue
-    } , 0);
-    const descont = totals.reduce((pValue, cValue) => {
-        if(cValue[1]){
-            return (cValue[0] - cValue[1]) + pValue;
-        }
-        return 0 + pValue;
-    } , 0);
+    const totals = Object.keys(productsCart).map(id => {
+        let qtd = productsCart[id].quantity;
+        return [productsCart[id].price * qtd, productsCart[id].promo_price * qtd]
+    });
 
-      return <Grid container spacing={2} sx={{
+    const subtotal = calculateTotal(totals);
+    const descont = calculatePromo(totals);
+
+    return <Grid container spacing={2} sx={{
         padding:'60px',
         boxSizing:'border-box'
       }}>
