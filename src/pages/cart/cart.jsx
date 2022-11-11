@@ -16,12 +16,10 @@ const Cart = () => {
     const subtotal = calculateTotal(totals);
     const descont = calculatePromo(totals);
 
-    return <Grid container spacing={2} sx={{
-        padding:'60px',
-        boxSizing:'border-box'
-      }}>
+    return <Grid container spacing={2} className='body_cart'>
         <Grid item xs={12} md={12} lg={8} sx={{
             padding: '20px !important',
+            
         }}>
             <div style={{
             boxSizing: 'border-box',

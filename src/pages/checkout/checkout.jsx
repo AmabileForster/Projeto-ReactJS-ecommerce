@@ -4,6 +4,7 @@ import { userIsLoggedIn } from "../../services/auth/auth";
 import { productsCart } from "../cart/products-cart";
 import { calculateTotal, calculatePromo } from "../../utils/calculate";
 import "./checkout.css";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
     const totals = Object.keys(productsCart).map(id => {
@@ -200,7 +201,9 @@ const Checkout = () => {
                             </div>
                         </Grid>
                         <Grid item xs={12}>
-                            <Button variant="contained" fullWidth style={{backgroundColor:'#f7b0b8'}}>Pagar</Button>
+                            <Link to="/purchase" style={{ textDecoration:'none', color:'white' }}>
+                                <Button variant="contained" fullWidth style={{backgroundColor: '#f7b0b8'}}>Comprar</Button>
+                            </Link>
                         </Grid>
                     </Grid>
                 </Grid> 

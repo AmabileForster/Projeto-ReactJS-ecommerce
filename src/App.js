@@ -21,7 +21,7 @@ function App() {
 
   return (
     <Router>
-      <AppBar position={'static'} style={{backgroundColor: '#f7b0b8'}}>
+      <AppBar position={'static'} style={{backgroundColor: '#f7b0b8', position:'relative'}}>
         <Toolbar style={{
           justifyContent: 'space-between'
         }} >

@@ -51,7 +51,7 @@ const Product = () => {
                 <Typography variant="h4" component="h1" className="productItem__title">{products[params.id].name}</Typography>
                 <div className="productItem__categories">
 
-                {products[params.id].categories.map(categoryId => <Chip className="" label={categories[categoryId].name} /> )} 
+                {products[params.id].categories.map(categoryId => <Chip label={categories[categoryId].name} /> )} 
                 </div>
                     {
                       products[params.id].promo_price ? <Typography variant="p" component="p" className="productItem__promo__price">{products[params.id].promo_price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</Typography> : ""
